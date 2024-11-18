@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">convertiseur1</string>
+    <string name="euro" translatable="false">€</string>
+    <string name="dollard" translatable="false">$</string>
+    <string name="yen" translatable="false">¥</string>
+    <string name="euro_yen" translatable="false">Euro-Yen</string>
+    <string name="euro_dollard" translatable="false">Euro-Dollard</string>
+    <string name="dollard_yen" translatable="false">Dollard-Yen</string>
+</resources>

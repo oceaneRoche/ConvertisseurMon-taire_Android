@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+                name="infoData"
+                type="com.example.myapplication.DataViewModel"/>
+        <import
+                type="com.example.myapplication.Formatage" />
+
+    </data>
+
+    <RelativeLayout
+            android:id="@+id/AbsoluteLayout1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+        <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/layoutPrincipal"
+                android:gravity="center|center_vertical">
+
+            <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="20dp">
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:id="@+id/textViewHaut"
+                        android:layout_weight="10"
+                        android:text="@{infoData.data.labelHaut}"/>
+
+                <EditText
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:inputType="numberDecimal"
+                        android:ems="10"
+                        android:id="@+id/editTextHaut"
+                        android:layout_weight="10"
+                        android:text="@{Formatage.INSTANCE.formatResultat(infoData.data.resultatHaut)}"
+                />
+
+            </LinearLayout>
+
+            <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:layout_margin="20dp">
+
+                <ImageButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/buttonHaut"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:src="@drawable/fleche_haut"
+                        android:padding="0dp"/>
+
+                <ImageButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/buttonBas"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:src="@drawable/fleche_bast"
+                        android:padding="0dp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="20dp">
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:id="@+id/textViewBas"
+                        android:layout_weight="10"
+                        android:text="@{infoData.data.labelBas}"
+
+                />
+
+                <EditText
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:inputType="number|numberDecimal"
+                        android:ems="10"
+                        android:id="@+id/editTextBas"
+                        android:layout_weight="10"
+                        android:text="@{Formatage.INSTANCE.formatResultat(infoData.data.resultatBas)}"
+
+                />
+            </LinearLayout>
+
+            <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="226dp">
+
+                <RadioGroup
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center_horizontal|center_vertical">
+
+                    <RadioButton
+                            android:text="@string/euro_dollard"
+                            android:layout_width="258dp"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/rbEuroDollar"
+                            android:checked="true"/>
+
+                    <RadioButton
+                            android:text="@string/euro_yen"
+                            android:layout_width="257dp"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/rbEuroYen"/>
+
+                    <RadioButton
+                            android:text="@string/dollard_yen"
+                            android:layout_width="258dp"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/rbDollarYen"/>
+                </RadioGroup>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+</layout>
